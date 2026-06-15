@@ -1,7 +1,8 @@
-from typing import Optional
 from sqlmodel import Field, SQLModel
 
+class CategoriaCreate(SQLModel):
+    nome: str
 
-class Categoria(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    descricao: str = Field(unique=True, nullable=False)
+
+class Categoria(CategoriaCreate, table=True):
+    id: int | None = Field(default=None, primary_key=True)

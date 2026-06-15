@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from database import inicializar_banco_de_dados
+from routers import categoria
 
 
 app = FastAPI(
@@ -16,4 +17,7 @@ def inicializar_sistema():
 
 @app.get("/")
 def pagina_inicial():
-    return {"status": "Online", "mensagem": "Bem-vindo ao Backend Seguro do miniERP!"}
+    return {"status": "Online", "mensagem": "Bem-vindo ao Sistema do miniERP!"}
+
+app.include_router(categoria.router)
+    
