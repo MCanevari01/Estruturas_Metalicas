@@ -34,6 +34,10 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 
 * Ao começar desenvolver meu primeiro CRUD (cadastro de categorias), percebi que estava colocando muitos dados e códigos em um único arquivo (main.py), e também ja havia escutado que isso não era uma prática muito boa, devido a poluição do código. Para isso, pesquisei sobre e descobri uma forma mais "limpa" de organizar o código, atrvés de rotas (routers), que seriam responsáveis pela ligação entre os modelos (models), banco de dados e a aplicação, sem estar tudo concentrado em um único lugar.
 
+### 📆 16/06/2026
+**Problema:** 
+* Não é bem um problema, mas algo que me atrapalhou um pouco no dia. Ao chegar em casa do trabalho, devido ao cansaço percebi que seria mais complicado a constância no projeto, e devido ao horário também me desanimou bastante. Mas em mais de uma ocasião eu já havia visto que é melhor manter uma pequena constância do que dedicar muito tempo em um único dia, por esse motivo, mesmo que sejam pequenas modificações ou pequenos desenvolvimentos, vou tentar manter uma constância diária.
+
 
 ---
 
@@ -91,12 +95,21 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - Criação do primeiro Cadastro de Categorias e tratamento básico de nomes duplicados
 - Realização de primeiro teste via swagger.
 
+### Versão 0.3 (📆16 jun. 2026)
+
+
 
 ---
 
 ## 🎯 Próximos Passos
 ### Curto Prazo
 - Criar primeiros endpoints CRUD.
+*  Referente a categorias
+*  [x] CREATE (15/06/2026)
+*  [ ] GET
+*  [ ] GET por ID
+*  [ ] UPDATE
+*  [ ] DELETE
 
 ### Médio/Longo Prazo
 - Implementar autenticação JWT.
@@ -135,6 +148,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 * **Iniciar uma tarefa isolada (Feature Branch):**
   ```bash
   git checkout -b feature/nome-da-tarefa (O comando -b diz ao Git para "criar" a branch, e o checkout te joga para dentro dela de forma isolada) 
+  
 ---
 
 ### ⚠️ Observações
