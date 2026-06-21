@@ -6,7 +6,7 @@ from routers import categoria
 app = FastAPI(
     title= "ERP Estruturas Metálicas",
     description= "Mini ERP para empresa de Estruturas Metálicas",
-    version= "1.0.0"
+    version= "0.2.2"
 )
 
 

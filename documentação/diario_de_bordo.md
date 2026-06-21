@@ -26,17 +26,18 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 
 ---
 
-## 🐛 Problemas, Dúvidas e Soluções Encontrados
+## 💭 Problemas, Reflexões e Aprendizados
 
 ### 📆 15/06/2026
-**Problema:**
 * Ao dar prosseguimento no projeto, lembrei de algo que havia escutado na faculdade e em palestras sobre os desenvolvedores e projetos, onde não era correto ou pouco indicado que alguem da equipe fizesse commits direto no arquivo principal. Tinha apenas escutado comentários, e nunca havia trabalhado com o mesmo, porém queria levar em conta esse fato e começar a trabalhar sobre o mesmo. Com isso a solução que encontrei ao pesquisar foi sobre as branches e pull request, onde decidi adotar o mesmo. Porém, com isso também apareceu outros pequenos problemas, como a utilização de mais códigos git, o que não estou familiarizado. Para o mesmo, decidi criar um arquivo que conteria esses códigos, mas tomou uma outra proporção, onde crio esse diário de bordo como solução
 
 * Ao começar desenvolver meu primeiro CRUD (cadastro de categorias), percebi que estava colocando muitos dados e códigos em um único arquivo (main.py), e também ja havia escutado que isso não era uma prática muito boa, devido a poluição do código. Para isso, pesquisei sobre e descobri uma forma mais "limpa" de organizar o código, atrvés de rotas (routers), que seriam responsáveis pela ligação entre os modelos (models), banco de dados e a aplicação, sem estar tudo concentrado em um único lugar.
 
-### 📆 16/06/2026
-**Problema:** 
+### 📆 16/06/2026 
 * Não é bem um problema, mas algo que me atrapalhou um pouco no dia. Ao chegar em casa do trabalho, devido ao cansaço percebi que seria mais complicado a constância no projeto, e devido ao horário também me desanimou bastante. Mas em mais de uma ocasião eu já havia visto que é melhor manter uma pequena constância do que dedicar muito tempo em um único dia, por esse motivo, mesmo que sejam pequenas modificações ou pequenos desenvolvimentos, vou tentar manter uma constância diária.
+
+### 📆 17 à 20/06/2026
+* Por se tratar de um primeiro projeto e de uma primeria experiência, não sei o que devo relatar que seria de proveito para mim ou alguem que ler, mas com o passar dos dias, devido a uma sobrecarga de trabalho, não consegui manter o desenvolvimento como queria e acabei ficando os últimos 3 dias sem fazer nenhuma alteração, algo que eu gostaria que não viesse a acontecer nem a se repetir, mas isso se deve a uma sobrecarga de trabalho. Por medida de metas próprias, desejo tentar finalizar e trabalhar com metas semanais, por exemplo, algo que não havia pensado antes porém tive a idéia, na semana desenvolver X passos do meu projeto, como essa semana agora, desenvolver todo o CRUD de categoria, e trabalhar com esse tipo e parâmetros e tentando sempre bater essas pequenas metas
 
 
 ---
@@ -90,14 +91,19 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - Instalação de extensões
 - Configuração do GitHub
 
-### Versão 0.2 (📆15 jun. 2026)
+### Versão 0.2.1 (📆15 jun. 2026)
 - Criação do diário de bordo
 - Criação do primeiro Cadastro de Categorias e tratamento básico de nomes duplicados
 - Realização de primeiro teste via swagger.
 
-### Versão 0.3 (📆16 jun. 2026)
+### Versão 0.2.2 (📆16 jun. 2026)
+- Criação da Listagem geral de Categorias (GET)
+- Realização do teste 
 
-
+### Versão 0.2.3 (📆21 jun. 2026)
+- Criação da Listagem de Categorias por ID (GET)
+- Realização dos Testes no Swagger.
+- commit da alteração
 
 ---
 
@@ -106,8 +112,8 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - Criar primeiros endpoints CRUD.
 *  Referente a categorias
 *  [x] CREATE (15/06/2026)
-*  [ ] GET
-*  [ ] GET por ID
+*  [x] GET (16/06/2026)
+*  [x] GET por ID (21/06/2026)
 *  [ ] UPDATE
 *  [ ] DELETE
 
@@ -149,6 +155,9 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
   ```bash
   git checkout -b feature/nome-da-tarefa (O comando -b diz ao Git para "criar" a branch, e o checkout te joga para dentro dela de forma isolada) 
   
+* **Inicialização do uvicorn**
+  ```bash
+  uvicorn main:app --reload
 ---
 
 ### ⚠️ Observações
