@@ -105,6 +105,10 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - Realização dos Testes no Swagger.
 - commit da alteração
 
+### Versão 0.2.4 (📆21 jun. 2026)
+- Criação da Atualização de Categorias (PUT)
+- Realização dos Testes no Swagger.
+- commit da alteração
 ---
 
 ## 🎯 Próximos Passos
@@ -114,7 +118,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 *  [x] CREATE (15/06/2026)
 *  [x] GET (16/06/2026)
 *  [x] GET por ID (21/06/2026)
-*  [ ] UPDATE
+*  [x] UPDATE (21/06/2026)
 *  [ ] DELETE
 
 ### Médio/Longo Prazo
@@ -140,7 +144,8 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
   ```bash
   git add .
   git commit -m "tipo: descrição clara do que foi feito"
-
+  git push 
+  
 * **Verificações:**
   ```bash
   git status

@@ -45,3 +45,30 @@ def categoria_por_id(categoria_id: int, session: Session = Depends(get_session))
             detail="Categoria não encontrada"
         )
     return categoria
+
+
+@router.put("/{categoria_id}", response_model=Categoria)
+
+def atualizar_categoria(categoria_id: int, categoria_input: CategoriaCreate, session: Session = Depends(get_session)):
+    categoria = session.get(Categoria, categoria_id)
+
+    if categoria is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Categoria não encontrada"
+        )
+    
+    categoria_existente = session.exec(
+        select(Categoria).where(Categoria.nome == categoria_input.nome, Categoria.id != categoria_id)
+              ).first()
+    
+    if categoria_existente:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Já existe uma categoria cadastrada com esse nome"
+        )
+    
+    categoria.nome = categoria_input.nome
+    session.commit()
+    session.refresh(categoria)
+    return categoria
