@@ -109,17 +109,35 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - Criação da Atualização de Categorias (PUT)
 - Realização dos Testes no Swagger.
 - commit da alteração
+
+### Versão 0.2.5 (📆21 jun. 2026)
+- Criação do Delete de categorias (DELETE)
+- Realização dos Testes no Swagger.
+- commit da alteração
+- pequena revisão do conteúdo até o momento.
+- Preparação para abertura da Pull Request
+
 ---
 
-## 🎯 Próximos Passos
-### Curto Prazo
+## 🎯 Metas e Próximos Passos
+
+**Metas Cumpridas**
+### CRUD de Categorias (Finalizado na primeira semana do projeto — 📆15/06 a 21/06)
+- [x] CREATE
+- [x] GET
+- [x] GET por ID
+- [x] UPDATE
+- [x] DELETE
+
+
+### Curto Prazo (Meta da Semana)
 - Criar primeiros endpoints CRUD.
-*  Referente a categorias
-*  [x] CREATE (15/06/2026)
-*  [x] GET (16/06/2026)
-*  [x] GET por ID (21/06/2026)
-*  [x] UPDATE (21/06/2026)
-*  [ ] DELETE
+*  Referente a materiais
+*  [ ] CREATE ()
+*  [ ] GET ()
+*  [ ] GET por ID ()
+*  [ ] UPDATE ()
+*  [ ] DELETE ()
 
 ### Médio/Longo Prazo
 - Implementar autenticação JWT.

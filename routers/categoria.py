@@ -72,3 +72,20 @@ def atualizar_categoria(categoria_id: int, categoria_input: CategoriaCreate, ses
     session.commit()
     session.refresh(categoria)
     return categoria
+
+@router.delete("/{categoria_id}", response_model=Categoria)
+def deletar_categoria(categoria_id: int, session: Session = Depends(get_session)):
+    categoria = session.get(Categoria, categoria_id)
+
+    if categoria is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Categoria não encontrada"
+        )
+    session.delete(categoria)
+    session.commit()
+
+    return {
+        "status": "Sucesso",
+        "mensagem": f"Categoria '{categoria.nome}' deletada com sucesso!"
+    }
