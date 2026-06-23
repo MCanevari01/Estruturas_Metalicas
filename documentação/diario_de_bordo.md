@@ -39,6 +39,12 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 ### 📆 17 à 20/06/2026
 * Por se tratar de um primeiro projeto e de uma primeria experiência, não sei o que devo relatar que seria de proveito para mim ou alguem que ler, mas com o passar dos dias, devido a uma sobrecarga de trabalho, não consegui manter o desenvolvimento como queria e acabei ficando os últimos 3 dias sem fazer nenhuma alteração, algo que eu gostaria que não viesse a acontecer nem a se repetir, mas isso se deve a uma sobrecarga de trabalho. Por medida de metas próprias, desejo tentar finalizar e trabalhar com metas semanais, por exemplo, algo que não havia pensado antes porém tive a idéia, na semana desenvolver X passos do meu projeto, como essa semana agora, desenvolver todo o CRUD de categoria, e trabalhar com esse tipo e parâmetros e tentando sempre bater essas pequenas metas
 
+### 📆 23/06/2026
+* Quando comecei a fazer faculdade, era em modelo presencial na FEMA(Fundação Educacional do Municipio de Assis), antes de mudar para EAD (Cruzeiro do SUl) , e hoje enquanto desenvolvia o projeto me lembrei de algo que meu professor, grande Almir Camolesi, puxou minha orelha por não ter utilizado na época e que acabei utilizando hoje 🙀​. Era sobre integridade dos dados, onde, ao desenvolver o modelo dos materiais eu acabei utilizando para vincular as categorias com os materiais, e sei que utilizarei muito durante o desenvolvimento.
+* Outro ponto, é que eu não mencionei antes, mas antes mesmo de começar a desenvolver, eu trabalhei na elaboração de um Modelo Entidade Relacionamento (MER), que estou utilizando para seguir como um caminho guia de evolução do projeto. Procurarei uma forma de coloca-lo também aqui na documentação.
+* Estou tendo bastante dificuldade também durante esse desenvolvimento com alguns detalhes que considero importante, por exemplo, por se tratar de um modelo que estou utilizando como base meu serviço, sou relativamente novo no trabalho e muita coisa ainda desconheço de lá, e isso tem me gerado algumas dúvidas, por exemplo, ao trabalhar com o models/material, duas áreas tive problema em escolher o tipo de dados. Um deles foi relativamente fácil, que era o valor_unitario, que escolhi utilizar decimal. Porem a quantidade em estoque, hávia várias opções, como int (que poderia ser o mais "recomendado"), o float, pois eu poderia separar materiais com valores flutuantes, por exemplo, materiais que seriam sepadados por pesos, e decimal, que foi o que acabei optando por utilizar. Com isso em mente, enquanto eu trabalhava e estudava sobre, embora de maneira superficial, surgiu também sobre cadastrar uma forma de unidade de medida, algo que não estava no meu planejamento primário mas acabei por incluir.
+* Mais um ponto a ser observado, quando fazia testes na aplicação, percebi que ao deletar uma categoria o meu banco continuava progressivamente, por exemplo, tendo 3 categorias registradas (1,2,3), ao deletar a (1), o próximo cadastro seria no (4), e o espaço (1) ficaria um vazio. Preciso ver como preencher ou reorganizar o banco de dados.
+
 
 ---
 
@@ -117,6 +123,12 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - pequena revisão do conteúdo até o momento.
 - Preparação para abertura da Pull Request
 
+### Versão 0.3.1 (📆23 jun. 2026)
+- Começando a trabalhar com a classe material
+- Criação/Modificação do model de material
+- Criação do routers de material
+- Criação do Endpoint POST(Create)
+
 ---
 
 ## 🎯 Metas e Próximos Passos
@@ -133,7 +145,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 ### Curto Prazo (Meta da Semana)
 - Criar primeiros endpoints CRUD.
 *  Referente a materiais
-*  [ ] CREATE ()
+*  [x] CREATE (📆23/06/2026)
 *  [ ] GET ()
 *  [ ] GET por ID ()
 *  [ ] UPDATE ()
