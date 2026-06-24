@@ -2,7 +2,7 @@ from sqlmodel import Field, SQLModel
 from decimal import Decimal
 
 
-class MaterialCreate(SQLModel):
+class MaterialBase(SQLModel):
     nome: str
     preco_unitario: Decimal
     quantidade_estoque: Decimal
@@ -10,6 +10,6 @@ class MaterialCreate(SQLModel):
     id_categoria: int
 
 
-class Material(MaterialCreate, table=True):
+class Material(MaterialBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
     id_categoria: int = Field(foreign_key="categoria.id")

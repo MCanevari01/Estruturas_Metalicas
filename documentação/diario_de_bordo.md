@@ -45,7 +45,11 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 * Estou tendo bastante dificuldade também durante esse desenvolvimento com alguns detalhes que considero importante, por exemplo, por se tratar de um modelo que estou utilizando como base meu serviço, sou relativamente novo no trabalho e muita coisa ainda desconheço de lá, e isso tem me gerado algumas dúvidas, por exemplo, ao trabalhar com o models/material, duas áreas tive problema em escolher o tipo de dados. Um deles foi relativamente fácil, que era o valor_unitario, que escolhi utilizar decimal. Porem a quantidade em estoque, hávia várias opções, como int (que poderia ser o mais "recomendado"), o float, pois eu poderia separar materiais com valores flutuantes, por exemplo, materiais que seriam sepadados por pesos, e decimal, que foi o que acabei optando por utilizar. Com isso em mente, enquanto eu trabalhava e estudava sobre, embora de maneira superficial, surgiu também sobre cadastrar uma forma de unidade de medida, algo que não estava no meu planejamento primário mas acabei por incluir.
 * Mais um ponto a ser observado, quando fazia testes na aplicação, percebi que ao deletar uma categoria o meu banco continuava progressivamente, por exemplo, tendo 3 categorias registradas (1,2,3), ao deletar a (1), o próximo cadastro seria no (4), e o espaço (1) ficaria um vazio. Preciso ver como preencher ou reorganizar o banco de dados.
 
-
+### 📆 24/06/2026
+* Durante o dia, eu pesquisei sobre o que eu pensava ser um erro na minha aplicação ou falta de tratar algum acontecimento. Enquanto via sobre, descobri ser o tratamento comum para bancos de dados Relacionais, e que isso é para evitar diversos poblemas, como um que me chamou a atenção, Integridade Relacional onde por exemplo, *você tem uma tabela Usuarios e uma tabela Pedidos. O usuário com ID 2 fez três pedidos. Se você deletar o usuário 2 e, por algum motivo, forçar o banco a reutilizar esse número para um novo usuário, os pedidos antigos agora pertencerão a uma pessoa completamente diferente! Reutilizar IDs destrói a confiabilidade do histórico do seu sistema.*
+* Ao testar a aplicação na noite anterior, percebi que estava dando erro no POST de materiais, e devido ao cansaço optei por resolver no dia seguinte. Quando analisava, e pesquisava, observei que o erro estava em meu banco de dados, mais especificamente na tabela de materiais, pois quando eu iniciei o projeto eu utilizei nome_material e quando comecei realmente a trabalhar na classe material, eu adotei nome como atributo para aquela classe, e isso trouxe esse pequeno problema 😔​. Optei por deletar e iniciar novamente o banco (Caso tenha problemas novamente tentarei outros métodos para aprendizado, pois quando trabalhar com bancos que já possuirem dados salvos, essa não será uma opção. Ví que há formas, como o Alembic, Flyway, Liquibase, mas não quero abordar isso no momento. Quero finalizar o CRUD de materiais como prioridade agora) Salvo pelo gitHub que continha a informação de como cadastrei e pude comparar. Isso trouxe mais um ponto que é sempre bom ter tudo registrado ou até mesmo uma extensão para visualizar a forma como o banco esta cadastrado.
+* Observei durante o teste que a quantidade de dígitos decimais não está configurada, esse é um ponto que deve ser trabalhado em breve
+* Percebo que o gitHub é muito mais do que apenas guardar o código, por exemplo, essa parte de correção pode ser registrada a parte antes de prosseguir com o desenvolvimento, porém não foi uma nova adição de funcionalidade, então utilizar *feat* não faria sentido. Analisando, descobri que há mais formas de documentar, como nesse caso atual, o *fix* e até mesmo para documentação a parte *docs*. É mais complexo do que imaginava...
 ---
 
 ## 🛠️ Ferramentas Utilizadas
@@ -126,8 +130,15 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 ### Versão 0.3.1 (📆23 jun. 2026)
 - Começando a trabalhar com a classe material
 - Criação/Modificação do model de material
+- Adição do relacionamento com Categoria
 - Criação do routers de material
 - Criação do Endpoint POST(Create)
+- Realização dos Testes no Swagger.
+- Commit da alteração.
+
+### Versão 0.3.1.1 (📆24 jun. 2026)
+- Correção (fix) do sistema
+- Registrado no Diário de bordo
 
 ---
 
@@ -150,6 +161,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 *  [ ] GET por ID ()
 *  [ ] UPDATE ()
 *  [ ] DELETE ()
+* Tratamento de casas decimais
 
 ### Médio/Longo Prazo
 - Implementar autenticação JWT.
@@ -189,7 +201,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 * **Iniciar uma tarefa isolada (Feature Branch):**
   ```bash
   git checkout -b feature/nome-da-tarefa (O comando -b diz ao Git para "criar" a branch, e o checkout te joga para dentro dela de forma isolada) 
-  
+  git push -u origin "nome da branch" (fazer ao iniciar uma nova branch para criar a branch no repositório)
 * **Inicialização do uvicorn**
   ```bash
   uvicorn main:app --reload
@@ -199,3 +211,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
   **Nomeclatura:**
   - feature -> muito utilizado para indicar uma nova funcionalidade
   - fix -> utilizado para correções
+  - refactor -> reorganização de código sem alterar comportamento
+  - docs -> alterações em documentação
+  - test -> adição ou alteração de testes
+  - chore -> tarefas de manutenção
