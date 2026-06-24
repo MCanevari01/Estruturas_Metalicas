@@ -17,6 +17,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - **Ideia - Inicial:** Minha ideia inicial era criar um ERP para a empresa onde trabalho, porém, ao observar, percebi que eles não tinham interesse no projeto, por esse motivo, decidi desenvolve-lo como um projeto pessoal para a transição de carreira e ingressar na área de Tecnologia, colocando em prática o que tenho aprendido no curso de graduação.
 - **Insight - GitHub:** Pensei sobre como equipes trabalham, como fazem uso da main e das branches, por esse motivo, mesmo trabalhando sozinho no projeto, planejo adotar o sistema de criar branches e pull requests.
 - **Ideia da Documentação:** Como ainda não tinha o hábito de programar constantemente e utilizar do GitHub, muitas vezes me perdia nos comandos e ficava tendo que pesquisa-los, por esse motivo, surgiu a ideia desta documentação, onde, inicialmente era apenas para esse propósito, e seria feito em arquivos de texto, mas ao pesquisar sobre, vi que é comum esse tipo de documentação e adotei a ideia de desenvolver e fazer algumas anotações.
+- **Seguimento do MER:** Registrar o modelo que utilizei de base para dar início do projeto de deixá-lo documentado para servir de guia do caminho e próximos passos do Projeto. Ainda é um modelo-esboço que deve ser lapidado e aprimorado.
 
 ### 💭 Hipótese
 - **Evitar arquivos temporários:** Não sei se é o correto, porém tive pensamento de evitar arquivos temporários, por exemplo evitar criar um script em python para injetar dados no banco, ao invés disso, criar um modelo onde eu adicionaria diretamente pela API Web.
@@ -50,6 +51,9 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 * Ao testar a aplicação na noite anterior, percebi que estava dando erro no POST de materiais, e devido ao cansaço optei por resolver no dia seguinte. Quando analisava, e pesquisava, observei que o erro estava em meu banco de dados, mais especificamente na tabela de materiais, pois quando eu iniciei o projeto eu utilizei nome_material e quando comecei realmente a trabalhar na classe material, eu adotei nome como atributo para aquela classe, e isso trouxe esse pequeno problema 😔​. Optei por deletar e iniciar novamente o banco (Caso tenha problemas novamente tentarei outros métodos para aprendizado, pois quando trabalhar com bancos que já possuirem dados salvos, essa não será uma opção. Ví que há formas, como o Alembic, Flyway, Liquibase, mas não quero abordar isso no momento. Quero finalizar o CRUD de materiais como prioridade agora) Salvo pelo gitHub que continha a informação de como cadastrei e pude comparar. Isso trouxe mais um ponto que é sempre bom ter tudo registrado ou até mesmo uma extensão para visualizar a forma como o banco esta cadastrado.
 * Observei durante o teste que a quantidade de dígitos decimais não está configurada, esse é um ponto que deve ser trabalhado em breve
 * Percebo que o gitHub é muito mais do que apenas guardar o código, por exemplo, essa parte de correção pode ser registrada a parte antes de prosseguir com o desenvolvimento, porém não foi uma nova adição de funcionalidade, então utilizar *feat* não faria sentido. Analisando, descobri que há mais formas de documentar, como nesse caso atual, o *fix* e até mesmo para documentação a parte *docs*. É mais complexo do que imaginava...
+* Enquanto registrava as informações percebo que tem ficado muita informação acumulada em um único local. Com o passar do tempo pretendo começar a dividir em arquivos diferentes, mas isso é assunto para daqui alguns dias.
+
+
 ---
 
 ## 🛠️ Ferramentas Utilizadas
@@ -139,6 +143,8 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 ### Versão 0.3.1.1 (📆24 jun. 2026)
 - Correção (fix) do sistema
 - Registrado no Diário de bordo
+- Criação de novo tópico na documentação (modelagem)
+- Adição do modelo entidade-relacionamento feito antes do inicio do projeto
 
 ---
 
@@ -151,6 +157,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - [x] GET por ID
 - [x] UPDATE
 - [x] DELETE
+### Adicionamento do MER que já havia feito antes de iniciar o projeto (📆24/06)
 
 
 ### Curto Prazo (Meta da Semana)
@@ -164,6 +171,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 * Tratamento de casas decimais
 
 ### Médio/Longo Prazo
+- Revisão do modelo entidade-relacionamento
 - Implementar autenticação JWT.
 - Controle de permissões.
 - Migração para PostgreSQL.
