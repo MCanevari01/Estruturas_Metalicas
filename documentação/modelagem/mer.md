@@ -3,7 +3,9 @@
 ## Versão 1 - Junho/2026
 Primeira versão do MER, elaborada manualmente algumas semanas antes de iniciar o desenvolvimento do projeto.
 
-![MER Inicial](MER_v1.jpeg)
+<p align="center">
+  <img src="MER_v1.jpeg" width="500">
+</p>
 
 ## Objetivo
 Servir como guia para o desenvolvimento inicial do miniERP.
