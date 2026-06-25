@@ -164,7 +164,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - Criar primeiros endpoints CRUD.
 *  Referente a materiais
 *  [x] CREATE (📆23/06/2026)
-*  [ ] GET ()
+*  [x] GET (24/06/2026)
 *  [ ] GET por ID ()
 *  [ ] UPDATE ()
 *  [ ] DELETE ()

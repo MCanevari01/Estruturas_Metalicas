@@ -33,3 +33,10 @@ def criar_material(material_input: MaterialBase, session: Session = Depends(get_
     session.commit()
     session.refresh(novo_material)
     return novo_material
+
+
+@router.get("/", response_model=list[Material])
+
+def listar_materiais(session: Session = Depends(get_session)):
+    materiais = session.exec(select(Material)).all()
+    return materiais
