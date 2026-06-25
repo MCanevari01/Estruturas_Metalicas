@@ -53,3 +53,36 @@ def material_por_id(material_id: int, session: Session = Depends(get_session)):
             detail="Material não encontrado"
         )
     return material
+
+
+@router.put("/{material_id}", response_model=Material)
+
+def atualizar_material(material_id: int, material_input: MaterialBase, session: Session = Depends(get_session)):
+    material = session.get(Material, material_id)
+
+    if material is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Material não encontrado"
+        )
+    
+    categoria_existente = session.get(Categoria, material_input.id_categoria)
+    if not categoria_existente:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Categoria não encontrada"
+        )
+    
+   # TODO:
+   # Implementar validação para impedir materiais
+   # com mesmo nome dentro da mesma categoria
+
+    material.nome = material_input.nome
+    material.preco_unitario = material_input.preco_unitario
+    material.quantidade_estoque = material_input.quantidade_estoque
+    material.unidade_medida = material_input.unidade_medida
+    material.id_categoria = material_input.id_categoria
+
+    session.commit()
+    session.refresh(material)
+    return material

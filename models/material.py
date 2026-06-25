@@ -7,7 +7,7 @@ class MaterialBase(SQLModel):
     preco_unitario: Decimal
     quantidade_estoque: Decimal
     unidade_medida: str
-    id_categoria: int
+    id_categoria : int
 
 
 class Material(MaterialBase, table=True):
