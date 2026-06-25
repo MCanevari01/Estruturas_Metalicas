@@ -166,8 +166,8 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 *  [x] CREATE (📆23/06/2026)
 *  [x] GET (📆24/06/2026)
 *  [x] GET por ID (📆24/06/2026)
-*  [ ] UPDATE ()
-*  [ ] DELETE ()
+*  [x] UPDATE (📆24/06/2026)
+*  [x] DELETE (📆24/06/2026)
 * Tratamento de casas decimais
 
 ### Médio/Longo Prazo

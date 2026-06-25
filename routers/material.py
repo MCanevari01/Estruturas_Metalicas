@@ -86,3 +86,22 @@ def atualizar_material(material_id: int, material_input: MaterialBase, session: 
     session.commit()
     session.refresh(material)
     return material
+
+
+@router.delete("/{material_id}")
+
+def deletar_material(material_id: int, session: Session = Depends(get_session)):
+    material = session.get(Material, material_id)
+
+    if material is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Material não encontrado"
+        )
+    
+    session.delete(material)
+    session.commit()
+    return{
+        "status": "Sucesso",
+        "mensagem": f"Material '{material.nome}' deletado com sucesso!"
+    }
