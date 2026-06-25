@@ -40,3 +40,16 @@ def criar_material(material_input: MaterialBase, session: Session = Depends(get_
 def listar_materiais(session: Session = Depends(get_session)):
     materiais = session.exec(select(Material)).all()
     return materiais
+
+
+@router.get("/{material_id}", response_model=Material)
+
+def material_por_id(material_id: int, session: Session = Depends(get_session)):
+    material = session.get(Material, material_id)
+
+    if material is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Material não encontrado"
+        )
+    return material
