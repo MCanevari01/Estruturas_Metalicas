@@ -73,7 +73,7 @@ def atualizar_categoria(categoria_id: int, categoria_input: CategoriaCreate, ses
     session.refresh(categoria)
     return categoria
 
-@router.delete("/{categoria_id}", response_model=Categoria)
+@router.delete("/{categoria_id}")
 def deletar_categoria(categoria_id: int, session: Session = Depends(get_session)):
     categoria = session.get(Categoria, categoria_id)
 

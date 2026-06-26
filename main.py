@@ -1,12 +1,13 @@
 from fastapi import FastAPI
 from database import inicializar_banco_de_dados
-from routers import categoria
+from routers import categoria, material
+
 
 
 app = FastAPI(
     title= "ERP Estruturas Metálicas",
     description= "Mini ERP para empresa de Estruturas Metálicas",
-    version= "0.2.2"
+    version= "0.3.5"
 )
 
 
@@ -20,4 +21,5 @@ def pagina_inicial():
     return {"status": "Online", "mensagem": "Bem-vindo ao Sistema do miniERP!"}
 
 app.include_router(categoria.router)
+app.include_router(material.router)
     
