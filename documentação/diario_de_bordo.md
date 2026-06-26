@@ -58,6 +58,12 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 * Outro ponto, ainda sobre modificação, eu alterei levemente meu modelo de material, onde ví que havia o ponto de id_categoria em dois lugares, sendo que não é necessário pois uma função já herdaria da anterior. Ao tentar remover isso, meu sistema começou a dar erro de execução, e percebi que as modificações devem ser feitas com mais cautelas para não afetar a integridade do sistema.
 * O dia não foi de todo complicações, pois ao desenvolvi percebi diversos pontos, como por exemplo, está ficando de certa forma mais tranquilo, pois tenho trabalhado com conceitos que tenho visto diariamente, e isso tem se tornado cada vez mais um hábito, que facilita muito meu desempenho.
 * Enquanto programava ví também que meu código, principalmente na parte de routers, tem se tornado muito repetitivo, em um mesmo arquivo. Em breve procurarei uma forma de tornar isso mais simplificado e mais limpo, para facilitar e para me organizar. Isso eu acredito que será um bom próximo passo no meu desenvolvimento.
+
+### 📆26/06/2026
+* Ao pesquisar e quebrar a cabeça, decidi sobre a regra de negócio que seria abordada e encontrei uma forma de validar esses dados. A regra adotada não permitirá materiais com nomes duplicados em uma mesma categoria, porém permitirá em categorias diferentes. Isso pode ser útil para peças em montagem ou até mesmo para um mesmo material separado para um uso diferente. Não sei se foi a ideal, mas acredito que no momento é valido. Se surgir necessidade, posso estar alterando no futuro.
+* Porém ao implementar também no endpoint PUT, precisei fazer uma pequena alteração, pois ao tentar alterar os dados de um material, havia um falso positivo na validação, tranzendo sempre um erro. Foi necessário fazer uma pequena validação diferente do que se encontra no endpoint POST.
+* Ao implementar essa alteração tem ficado mais nítido a repetição de código e os tratamentos de erros. Acredito que em breve devo procurar uma forma de amenizar um pouco essa parte para facilitar para mim e para quem olhar para o código no futuro.
+
 ---
 
 ## 🛠️ Ferramentas Utilizadas
@@ -159,6 +165,8 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - Commits a cada finalização no gitHub
 - Atualização no diário de bordo
 
+### Versão 0.3.5.1(📆26 jun. 2026)
+- Fix: Adicionando a validação de materiais duplicados
 
 ---
 
