@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from database import inicializar_banco_de_dados
-from routers import categoria
-from routers import material
+from routers import categoria, material
+
 
 
 app = FastAPI(

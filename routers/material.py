@@ -20,12 +20,16 @@ def criar_material(material_input: MaterialBase, session: Session = Depends(get_
         )
 
     material_existente = session.exec(
-        select(Material).where(Material.nome == material_input.nome)).first()
+        select(Material).where(
+            Material.nome == material_input.nome,
+            Material.id_categoria == material_input.id_categoria
+            )
+        ).first()
     
     if material_existente:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Já existe um material cadastrado com esse nome"
+            detail="Já existe um material cadastrado com esse nome nessa categoria"
         )
     
     novo_material = Material.model_validate(material_input)
@@ -73,9 +77,19 @@ def atualizar_material(material_id: int, material_input: MaterialBase, session: 
             detail="Categoria não encontrada"
         )
     
-   # TODO:
-   # Implementar validação para impedir materiais
-   # com mesmo nome dentro da mesma categoria
+    material_existente = session.exec(
+        select(Material).where(
+            Material.nome == material_input.nome,
+            Material.id_categoria == material_input.id_categoria,
+            Material.id != material_id
+        )
+    ).first()
+    
+    if material_existente:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Já existe um material cadastrado com esse nome nessa categoria"
+        )
 
     material.nome = material_input.nome
     material.preco_unitario = material_input.preco_unitario
