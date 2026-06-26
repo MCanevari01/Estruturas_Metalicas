@@ -53,7 +53,11 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 * Percebo que o gitHub é muito mais do que apenas guardar o código, por exemplo, essa parte de correção pode ser registrada a parte antes de prosseguir com o desenvolvimento, porém não foi uma nova adição de funcionalidade, então utilizar *feat* não faria sentido. Analisando, descobri que há mais formas de documentar, como nesse caso atual, o *fix* e até mesmo para documentação a parte *docs*. É mais complexo do que imaginava...
 * Enquanto registrava as informações percebo que tem ficado muita informação acumulada em um único local. Com o passar do tempo pretendo começar a dividir em arquivos diferentes, mas isso é assunto para daqui alguns dias.
 
-
+### 📆 25/06/2026
+* Acreditava que seria um dia mais tranquilo em relação ao desenvolvimento, pois pretendia finalizar os endpoints restantes da classe Material, e como eu já havia feito antes o de Categorias pensava que seria mais tranquilo. Como me enganei😓​... Foi a primeira vez que trabalhei com uma classe que continha vários atributos portanto meu primeiro grande passo e que me travou bastante de inicio foi saber que teria que atualizar todos os atributos no PUT. Outro ponto, foi saber mais sobre regras de negócios. Eu já sabia que usaria mas não ao ponto que enfrentei hoje. Ao cadastrar o material, eu o vinculei com as categorias. Porém ao atualizar eu queria bloquear para não cadastrar mais de um material com o mesmo nome em uma mesma categoria. Porém ví que para fazer as checagens foi algo que não conseguiria em um curto espaço de tempo, por esse motivo, optei por deixar para resolver essa regra de negócio em um momento seguinte, provavelmente amanhã ou até o final dessa semana. Não quero passar para um próximo tópico deixando algo que considero grande para depois. Adaptações e modificações eu considero tudo bem, ter que voltar em algum momento para adaptar algo, porém, nesse sentido quero resolver o quanto antes. Para deixar para depois utilizei o TODO, ví que era um termo que é comumente utilizado em casos assim.
+* Outro ponto, ainda sobre modificação, eu alterei levemente meu modelo de material, onde ví que havia o ponto de id_categoria em dois lugares, sendo que não é necessário pois uma função já herdaria da anterior. Ao tentar remover isso, meu sistema começou a dar erro de execução, e percebi que as modificações devem ser feitas com mais cautelas para não afetar a integridade do sistema.
+* O dia não foi de todo complicações, pois ao desenvolvi percebi diversos pontos, como por exemplo, está ficando de certa forma mais tranquilo, pois tenho trabalhado com conceitos que tenho visto diariamente, e isso tem se tornado cada vez mais um hábito, que facilita muito meu desempenho.
+* Enquanto programava ví também que meu código, principalmente na parte de routers, tem se tornado muito repetitivo, em um mesmo arquivo. Em breve procurarei uma forma de tornar isso mais simplificado e mais limpo, para facilitar e para me organizar. Isso eu acredito que será um bom próximo passo no meu desenvolvimento.
 ---
 
 ## 🛠️ Ferramentas Utilizadas
@@ -146,6 +150,16 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 - Criação de novo tópico na documentação (modelagem)
 - Adição do modelo entidade-relacionamento feito antes do inicio do projeto
 
+### Versão 0.3.5(📆25 jun. 2026)
+- Criação do Endpoint GET de materiais
+- Criação do Endpoint GET por ID de materiais
+- Criação do Endpoint PUT de materiais
+- Criação do Endpoint DELETE de materiais
+- Testes simples no Swagger
+- Commits a cada finalização no gitHub
+- Atualização no diário de bordo
+
+
 ---
 
 ## 🎯 Metas e Próximos Passos
@@ -165,9 +179,9 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
 *  Referente a materiais
 *  [x] CREATE (📆23/06/2026)
 *  [x] GET (📆24/06/2026)
-*  [x] GET por ID (📆24/06/2026)
-*  [x] UPDATE (📆24/06/2026)
-*  [x] DELETE (📆24/06/2026)
+*  [x] GET por ID (📆25/06/2026)
+*  [x] UPDATE (📆25/06/2026)
+*  [x] DELETE (📆25/06/2026)
 * Tratamento de casas decimais
 
 ### Médio/Longo Prazo
@@ -223,3 +237,7 @@ Resolvi criar esta documentação para avaliar e anotar pequenos insights e idei
   - docs -> alterações em documentação
   - test -> adição ou alteração de testes
   - chore -> tarefas de manutenção
+
+  # TODO
+  # Explicação
+  -> Pequeno trexo que como o nome diz TODO -> pendência, ou seja, voltarei para fazer algo alí depois, o que pode ser colocado em conjunto explicando em sequência

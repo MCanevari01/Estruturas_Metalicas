@@ -7,7 +7,7 @@ from routers import material
 app = FastAPI(
     title= "ERP Estruturas Metálicas",
     description= "Mini ERP para empresa de Estruturas Metálicas",
-    version= "0.3.1"
+    version= "0.3.5"
 )
 
 
